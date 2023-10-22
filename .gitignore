@@ -1,5 +1,6 @@
 *.docx
 *.pptx
-data.csv
 .DS_Store
+data.csv
 data_process.csv
+exception.csv
