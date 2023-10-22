@@ -21,11 +21,10 @@ class DataProcess:
         df_new.loc[pm_rows & time_condition, '日期时间'] += pd.to_timedelta(12, unit='h')
 
         df_new['账号'] = df['从账号'].copy()
-        df_new['机构'] = df['机构'].copy()
         df_new['操作内容'] = df['操作内容'].str.slice(36, None).str.strip()
         df_new['源IP'] = df['源IP'].copy()
         df_new = df_new.sort_values(by='日期时间', ascending=True)
 
-        # df_new.to_csv('data_process.csv')
+        df_new.to_csv('../data_process.csv')
 
         return df_new
